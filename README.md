@@ -2,7 +2,6 @@
 title: "Getting and Cleaning Data - Submission Codebook"
 author: "MAC"
 date: "Saturday, February 21, 2015"
-output: html_document
 ---
 
 ### Introduction
