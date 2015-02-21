@@ -16,7 +16,7 @@ run_analysis <- function() {
       # "UCI HAR Dataset" root folder of the unzipped content is in under the working directory
       
       # --------------
-      # ACTIVITY REFERENTIAL
+      # ACTIVITY
       # --------------
       
       # Load activity labels
@@ -31,7 +31,7 @@ run_analysis <- function() {
       colnames(y_train) <- "Activity"
       
       # --------------
-      # SUBJECT REFERENTIAL
+      # SUBJECT
       # --------------
       
       # TEST SUBJECTS
@@ -55,19 +55,19 @@ run_analysis <- function() {
       X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
       # Add labels from features.txt
       colnames(X_test) <- features
-      # Only keep cols which are "mean()" or "std()"
-      X_test <- subset(X_test, select = grep("mean()|std()", names(X_test)))
+      # Only keep cols which are "mean" or "std"
+      X_test <- subset(X_test, select = grep("std|mean\\(", names(X_test)))
 
       # TRAIN DATA 
       # Load data
       X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
       # Add labels from features.txt
       colnames(X_train) <- features
-      # Only keep cols which are "mean()" or "std()"
-      X_train <- subset(X_train, select = grep("mean()|std()", names(X_train)))
+      # Only keep cols which are "mean" or "std"
+      X_train <- subset(X_train, select = grep("std|mean\\(", names(X_train)))
       
       # --------------
-      # DATA MAPPING WITH SUBJECT AND ACTIVITIES
+      # DATA Binding and Merging
       # --------------
       
       # TEST DATA MAPPING
@@ -78,12 +78,8 @@ run_analysis <- function() {
       X_train <- cbind(y_train, X_train)
       X_train <- cbind(subject_train, X_train)
       
-      # --------------
-      # Merge X_test and X_train into one data set
-      # --------------
-      
+      # MERGE
       Merged_data <- rbind(X_test, X_train)
-      Merged_data <<- Merged_data
       
       # --------------
       # SUMMARY DATA
