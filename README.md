@@ -1,5 +1,5 @@
 ---
-title: "Getting and Cleaning Data - Submission Codebook"
+title: "Getting and Cleaning Data - Submission README"
 author: "MAC"
 date: "Saturday, February 21, 2015"
 ---
