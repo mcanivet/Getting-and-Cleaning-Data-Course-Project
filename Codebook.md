@@ -4,7 +4,7 @@ author: "MAC"
 date: "Saturday, February 21, 2015"
 ---
 
-## Code Book
+# Code Book
 
 This document describes the code inside run_analysis.R
 
